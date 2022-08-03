@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Futbolista Management System</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Futbolista Management System</h1>
+    <hr>
+    <h2>Save Futbolista</h2>
+
+    <form action="#" th:action="@{/save}" th:object="${futbolista}"
+          method="POST">
+        <label for="name">Nombre</label>
+        <input type="text" th:field="*{nombre}" id="name">
+        <br>
+        <label for="primerApellido">Primer Apellido</label>
+        <input type="text" th:field="*{primerApellido}" id="primerApellido">
+        <br>
+        <label for="segundoApellido">Segundo Apellido</label>
+        <input type="text" th:field="*{segundoApellido}" id="segundoApellido">
+        <br>
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input type="text" th:field="*{fechaNacimiento}" id="fechaNacimiento">
+        <br>
+        <label for="posicion">Posicion</label>
+        <input type="text" th:field="*{posicion}" id="posicion">
+        <br>
+        <label for="ramaJuega">Rama en la que juega</label>
+        <input type="text" th:field="*{ramaJuega}" id="ramaJuega">
+        <br>
+        <label for="direccion">Direccion</label>
+        <input type="text" th:field="*{direccion}" id="direccion">
+        <br>
+        <label for="provincia">Provincia</label>
+        <input type="text" th:field="*{provincia}" id="provincia">
+        <br>
+        <label for="canton">Canton</label>
+        <input type="text" th:field="*{canton}" id="canton">
+        <br>
+        <label for="distrito">Distrito</label>
+        <input type="text" th:field="*{distrito}" id="distrito">
+        <br>
+        <label for="telefono">Telefono</label>
+        <input type="text" th:field="*{telefono}" id="telefono">
+        <br>
+        <label for="email">Email</label>
+        <input type="text" th:field="*{email}" id="email">
+        <br>
+        <label for="altura">Altura</label>
+        <input type="text" th:field="*{altura}" id="altura">
+        <br>
+        <label for="peso">Peso</label>
+        <input type="text" th:field="*{peso}" id="peso">
+        <br>
+
+
+        <button type="submit" class="btn btn-info col-2">Save
+            Futbolista</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}"> Back to Futbolista List</a>
+</div>
+</body>
+</html>
