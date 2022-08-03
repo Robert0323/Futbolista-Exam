@@ -77,12 +77,14 @@ public class FutbolistaServiceImpl implements FutbolistaService {
         return futbolista;
     }
     @Override
-    //Esta es la funcion que se realiza para la busqueda por aproximacion pero no se logro conectar a el html de forma correcta
     public  List<Futbolista> aproxFutbolista (String aprox){
         List<Futbolista> lista = futbolistaRepo.findAll();
         List<Futbolista> respuesta = new ArrayList<Futbolista>();
         for(int i = 0;i < lista.size();i++){
-            if(lista.get(i).getNombre().contains(aprox) || lista.get(i).getPrimerApellido().contains(aprox) || lista.get(i).getSegundoApellido().contains(aprox)) {
+            if(lista.get(i).getNombre().toLowerCase().contains(aprox.toLowerCase()) ||
+                    lista.get(i).getPrimerApellido().toLowerCase().contains(aprox.toLowerCase()) ||
+                    lista.get(i).getSegundoApellido().toLowerCase().contains(aprox.toLowerCase()))
+            {
                 respuesta.add(lista.get(i));
             }
         }

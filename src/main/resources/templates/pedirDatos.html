@@ -14,10 +14,10 @@
     <hr>
     <h2>Buscar Futbolista</h2>
 
-    <form action="#" th:action="@{/aprox/{aproximador}}"
+    <form action="#" th:action="@{/aprox/{textcontain}}"
           method="POST">
-        <label for="aproximador">Coinsidencia</label>
-        <input type="text"  id="aproximador">
+        <label for="textcontain">Coinsidencia</label>
+        <input type="text"  name="textcontain" id="textcontain">
         <br>
 
         <button type="submit" class="btn btn-info col-2">Buscar

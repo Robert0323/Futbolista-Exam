@@ -72,9 +72,9 @@ public class FutbolistaController {
         return "redirect:/";
 
     }
-    @GetMapping("/aprox/{aproximador}")
-    public String aproxFut(@PathVariable(value = "aproximador") String aproximador, Model model) {
-       model.addAttribute("allemplist", futbolistaService.aproxFutbolista(aproximador));
+    @RequestMapping(value="/aprox/{aproximador}", method=RequestMethod.POST)
+    public String aproxFut(@RequestParam("textcontain") String aproximador, Model model) {
+        model.addAttribute("allemplist", futbolistaService.aproxFutbolista(aproximador));
         return "aproxNyA";
     }
     @GetMapping("/datosAprox")
